@@ -4,7 +4,7 @@ import { jaJP } from "@clerk/localizations";
 import { ClerkProvider, useAuth } from "@clerk/nextjs";
 import { ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
-import { type ReactNode, useEffect, useState } from "react";
+import { type ReactNode } from "react";
 
 const convexUrl =
 	process.env.NEXT_PUBLIC_CONVEX_URL || "https://placeholder.convex.cloud";
@@ -17,17 +17,10 @@ function isValidClerkKey(key: string | undefined): boolean {
 }
 
 export function ConvexClientProvider({ children }: { children: ReactNode }) {
-	const [isMounted, setIsMounted] = useState(false);
-
-	useEffect(() => {
-		setIsMounted(true);
-	}, []);
-
 	const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 	const hasValidClerkKey = isValidClerkKey(clerkKey);
 
-	// Before mount or without valid Clerk key, render children directly
-	if (!isMounted || !hasValidClerkKey) {
+	if (!hasValidClerkKey) {
 		return <>{children}</>;
 	}
 
