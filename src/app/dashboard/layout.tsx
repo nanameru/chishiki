@@ -3,9 +3,9 @@ export const dynamic = "force-dynamic";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 
 export default function DashboardLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return <DashboardShell>{children}</DashboardShell>;
+	return <DashboardShell>{children}</DashboardShell>;
 }
