@@ -6,9 +6,8 @@ import { ConvexProviderWithClerk } from "convex/react-clerk";
 import { ClerkProvider, useAuth } from "@clerk/nextjs";
 import { jaJP } from "@clerk/localizations";
 
-const convex = new ConvexReactClient(
-  process.env.NEXT_PUBLIC_CONVEX_URL as string
-);
+const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL || "https://placeholder.convex.cloud";
+const convex = new ConvexReactClient(convexUrl);
 
 function isValidClerkKey(key: string | undefined): boolean {
   if (!key) return false;
