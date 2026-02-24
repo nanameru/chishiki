@@ -18,26 +18,23 @@ const footerColumns: readonly FooterColumn[] = [
 		links: [
 			{ label: "機能紹介", href: "#features" },
 			{ label: "料金プラン", href: "#pricing" },
-			{ label: "ロードマップ", href: "#" },
-			{ label: "更新履歴", href: "#" },
+			{ label: "サービスについて", href: "/about" },
+			{ label: "よくある質問", href: "#faq" },
 		],
 	},
 	{
 		title: "サポート",
 		links: [
-			{ label: "ヘルプセンター", href: "#" },
-			{ label: "お問い合わせ", href: "#" },
-			{ label: "ステータス", href: "#" },
-			{ label: "API ドキュメント", href: "#" },
+			{ label: "ヘルプセンター", href: "/help" },
+			{ label: "サービスステータス", href: "/status" },
 		],
 	},
 	{
 		title: "法的情報",
 		links: [
-			{ label: "利用規約", href: "#" },
-			{ label: "プライバシーポリシー", href: "#" },
-			{ label: "特定商取引法に基づく表記", href: "#" },
-			{ label: "セキュリティ", href: "#" },
+			{ label: "利用規約", href: "/terms" },
+			{ label: "プライバシーポリシー", href: "/privacy" },
+			{ label: "特定商取引法に基づく表記", href: "/legal" },
 		],
 	},
 ] as const;
@@ -121,19 +118,19 @@ export function LandingFooter() {
 					</p>
 					<div className="flex items-center gap-6">
 						<Link
-							href="#"
+							href="/about"
 							className="text-xs text-gray-400 transition-colors hover:text-indigo-600"
 						>
 							サービスについて
 						</Link>
 						<Link
-							href="#"
+							href="/help"
 							className="text-xs text-gray-400 transition-colors hover:text-indigo-600"
 						>
 							ヘルプ
 						</Link>
 						<Link
-							href="#"
+							href="/status"
 							className="text-xs text-gray-400 transition-colors hover:text-indigo-600"
 						>
 							ステータス

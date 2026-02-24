@@ -300,6 +300,95 @@ export default function LandingPage() {
 							</p>
 						</div>
 					</div>
+
+					{/* Dashboard Preview */}
+					<div className="relative mx-auto mt-20 max-w-5xl">
+						{/* Glow effect */}
+						<div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-indigo-200/40 via-violet-200/40 to-indigo-200/40 blur-2xl" />
+						<div className="relative rounded-xl border border-gray-200/60 bg-white shadow-2xl shadow-indigo-600/10 ring-1 ring-black/5 overflow-hidden">
+							{/* Browser chrome */}
+							<div className="flex items-center gap-2 border-b border-gray-100 bg-gray-50/80 px-4 py-3">
+								<div className="flex gap-1.5">
+									<div className="size-3 rounded-full bg-red-400" />
+									<div className="size-3 rounded-full bg-amber-400" />
+									<div className="size-3 rounded-full bg-green-400" />
+								</div>
+								<div className="mx-auto flex-1 max-w-sm">
+									<div className="rounded-md bg-white px-3 py-1 text-center text-xs text-gray-400 ring-1 ring-gray-200">
+										chishiki.vercel.app/dashboard
+									</div>
+								</div>
+							</div>
+							{/* Dashboard mockup */}
+							<div className="flex">
+								{/* Sidebar mock */}
+								<div className="hidden w-52 shrink-0 border-r border-gray-100 bg-gray-50/50 p-4 sm:block">
+									<div className="flex items-center gap-2 mb-6">
+										<div className="size-7 rounded-lg bg-indigo-600" />
+										<div className="h-4 w-16 rounded bg-gray-200" />
+									</div>
+									<div className="space-y-2">
+										<div className="flex items-center gap-2 rounded-lg bg-indigo-50 px-3 py-2">
+											<div className="size-4 rounded bg-indigo-200" />
+											<div className="h-3 w-24 rounded bg-indigo-200" />
+										</div>
+										<div className="flex items-center gap-2 px-3 py-2">
+											<div className="size-4 rounded bg-gray-200" />
+											<div className="h-3 w-20 rounded bg-gray-200" />
+										</div>
+										<div className="flex items-center gap-2 px-3 py-2">
+											<div className="size-4 rounded bg-gray-200" />
+											<div className="h-3 w-22 rounded bg-gray-200" />
+										</div>
+										<div className="flex items-center gap-2 px-3 py-2">
+											<div className="size-4 rounded bg-gray-200" />
+											<div className="h-3 w-16 rounded bg-gray-200" />
+										</div>
+									</div>
+								</div>
+								{/* Main content mock */}
+								<div className="flex-1 p-5">
+									{/* Stats row */}
+									<div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+										{[
+											{ label: "総ブックマーク", value: "128", color: "bg-indigo-100 text-indigo-700" },
+											{ label: "今週の保存", value: "12", color: "bg-emerald-100 text-emerald-700" },
+											{ label: "お気に入り", value: "34", color: "bg-amber-100 text-amber-700" },
+											{ label: "コレクション", value: "8", color: "bg-violet-100 text-violet-700" },
+										].map((stat) => (
+											<div key={stat.label} className="rounded-lg border border-gray-100 bg-white p-3 shadow-sm">
+												<div className="text-[10px] text-gray-400">{stat.label}</div>
+												<div className={`mt-1 text-lg font-bold ${stat.color.split(" ")[1]}`}>{stat.value}</div>
+											</div>
+										))}
+									</div>
+									{/* Bookmark cards mock */}
+									<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+										{[
+											{ title: "React 19の新機能まとめ", site: "zenn.dev", tags: ["React", "フロントエンド"] },
+											{ title: "TypeScript 5.7リリースノート", site: "typescriptlang.org", tags: ["TypeScript"] },
+											{ title: "Next.js App Routerの実践Tips", site: "qiita.com", tags: ["Next.js", "React"] },
+										].map((card) => (
+											<div key={card.title} className="rounded-lg border border-gray-100 bg-white overflow-hidden shadow-sm">
+												<div className="h-20 bg-gradient-to-br from-indigo-50 to-violet-50" />
+												<div className="p-3">
+													<div className="text-[10px] text-gray-400 mb-1">{card.site}</div>
+													<div className="text-xs font-semibold text-gray-800 line-clamp-2">{card.title}</div>
+													<div className="mt-2 flex gap-1">
+														{card.tags.map((tag) => (
+															<span key={tag} className="rounded-full bg-indigo-50 px-2 py-0.5 text-[9px] font-medium text-indigo-600">
+																{tag}
+															</span>
+														))}
+													</div>
+												</div>
+											</div>
+										))}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 
