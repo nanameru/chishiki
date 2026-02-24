@@ -26,9 +26,11 @@ export const metadata: Metadata = {
 		"情報整理",
 	],
 	authors: [{ name: "チシキ" }],
+	metadataBase: new URL("https://chishiki-sigma.vercel.app"),
 	openGraph: {
 		type: "website",
 		locale: "ja_JP",
+		url: "https://chishiki-sigma.vercel.app",
 		siteName: "チシキ",
 		title: "チシキ - AIが知識を整理するセカンドブレイン",
 		description:

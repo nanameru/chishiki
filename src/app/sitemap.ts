@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const baseUrl = "https://chishiki.vercel.app";
+	const baseUrl = "https://chishiki-sigma.vercel.app";
 
 	return [
 		{
